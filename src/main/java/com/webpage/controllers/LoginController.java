@@ -16,9 +16,9 @@ public class LoginController {
   @RequestMapping(method = RequestMethod.POST)
   public String submit(Model model, @ModelAttribute("loginBean") LoginBean loginBean) {
     if (loginBean != null && loginBean.getUserName() != null & loginBean.getPassword() != null) {
-      if (loginBean.getUserName().equals("chandra") && loginBean.getPassword().equals("chandra123")) {
+      if (loginBean.getUserName().equals("JCquiroga") && loginBean.getPassword().equals("JCquiroga")) {
         model.addAttribute("msg", loginBean.getUserName());
-        return "success";
+        return "index";
       } else {
         model.addAttribute("error", "Invalid Details");
         return "login";
