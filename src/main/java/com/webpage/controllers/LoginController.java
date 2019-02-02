@@ -1,4 +1,5 @@
 package com.webpage.controllers;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,12 +14,13 @@ public class LoginController {
     return "login";
   }
 
-  @RequestMapping(method = RequestMethod.POST)
-  public String submit(Model model, @ModelAttribute("loginBean") LoginBean loginBean) {
+  @RequestMapping(value = "/validate", method = RequestMethod.POST)
+  public String submit(@ModelAttribute("loginBean") LoginBean loginBean,
+                       Model model) {
     if (loginBean != null && loginBean.getUserName() != null & loginBean.getPassword() != null) {
       if (loginBean.getUserName().equals("JCquiroga") && loginBean.getPassword().equals("JCquiroga")) {
         model.addAttribute("msg", loginBean.getUserName());
-        return "index";
+        return "access";
       } else {
         model.addAttribute("error", "Invalid Details");
         return "login";

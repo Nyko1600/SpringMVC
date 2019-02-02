@@ -16,7 +16,6 @@
   <script type="text/javascript" src="<c:url value="/resources/script/myscript.js"></c:url>"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 </head>
-<bodyonload="load();">
 <input type="hidden" id="user_id">
 Name: <input type="text" id="name" required="required" name="user_name"><br>
 Email: <input type="email" id="email" required="required" name="email"><br>
